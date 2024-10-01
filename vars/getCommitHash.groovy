@@ -2,5 +2,5 @@
  * getCommitHash returns the current git commit hash.
  */
 def call(Map opts = [:]) {
-    sh "git rev-parse HEAD"
+    sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 }
